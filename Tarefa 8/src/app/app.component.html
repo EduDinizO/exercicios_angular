@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <ol>
+                <li>Aplique 2 pipes na data, um que transforma todas as letras em maíusula e outro que mostre a data como 'fulldate'
+                    (procure sobre os pipes pré definidos no angular)</li>
+                <li>CRIE um pipe (ng g p) que verifica se o nome do servidor contém mais de 5 caracteres, e se tiver, retorna
+                    esses 5 caracteres + ... (dica: sbstr)</li>
+                <li>Obs: Ao add um novo server (com o botão) os pipes devem ser aplicados</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <input type="text" [(ngModel)]="filteredStatus">
+            <br>
+            <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+            <br>
+            <br>
+            <h2>App Status: {{ appStatus | async}}</h2>
+            <hr>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let server of servers" [ngClass]="getStatusClasses(server)">
+                    <span class="badge">
+                        {{ server.status }}
+                    </span>
+                    <strong>{{ server.name }}</strong> | {{ server.instanceType }} | {{ server.started }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
