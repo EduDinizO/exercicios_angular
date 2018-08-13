@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ol>
+                <li>Crie 3 novos componentes: GameControl, Impar e Par</li>
+                <li>O componente GameControl deve ter botões que iniciam e pausam o jogo</li>
+                <li>Os componentes Impar e Par devem conter apenas um texto (par/ímpar) + um número</li>
+                <li>Quando o jogo começa, um evento (que possui um número que é incrementado++) deve ser emitiddo a cada segundo</li>
+                <li>O evento deve ser "listenable (escutável)" de fora do componente</li>
+                <li>Quando o jogo é pausado, nenhum evento deve ser emitido (clearInterval(this.xxx))</li>
+                <li>Para cada número par emitido um componente Par deve ser criado mostrando o texto + número, o mesmo para número
+                    ímpar
+                </li>
+                <li>Exemplo:</li>
+                <li>Ímpar - 1</li>
+                <li>Par: 2</li>
+                <li>Estilize a cor do texto dos componentes Par e Ímpar</li>
+            </ol>
+            <p>Dicas:</p>
+            <p>AppCompoente = componente pai</p>
+            <p>setInterval(() => { this.eventEmitter.emit(this.lastNumber + 1); this.lastNumber++; }, 1000)</p>
+            <p>Usar @Output() (quando quer emitir algo) e @Input() (quando algo vem de fora)</p>
+        </div>
+    </div>
+</div>
